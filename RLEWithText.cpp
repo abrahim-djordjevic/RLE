@@ -7,13 +7,13 @@ using namespace std;
 string compress(string text)
 {
   string result = "";
-  int j = 1;
+  int j;
   for (int i = 0; i < text.size(); i++)
   {
     if(i > 0 && text[i-1] == text[i]) continue;
+    j = 1;
     while(text[i] == text[i + j]){ j++; }
     result = result + to_string(j) + text[i];
-    j = 1;
   }
   return result;
 }
